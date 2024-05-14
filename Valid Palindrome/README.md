@@ -12,7 +12,7 @@
 <!-- Add your space complexity here, e.g. $$O(n)$$ -->
 
 # Code
-```
+```c#
 using System.Text.RegularExpressions;
 
 public class Solution {
