@@ -81,17 +81,19 @@ true
 ```
 
 ## Intuition
-<!-- Describe your first thoughts on how to solve this problem. -->
+To determine if a given string is a palindrome, we need to ignore cases and remove any non-alphanumeric characters. After cleaning the string, we can compare it to its reverse to check if it reads the same forwards and backwards.
 
 ## Approach
-<!-- Describe your approach to solving the problem. -->
+1. **Convert to Lowercase and Clean the String:** First, we convert the input string to lowercase to make the comparison case-insensitive. We then use a regular expression to remove all non-alphanumeric characters from the string.
+2. **Two-Pointer Technique:** We use two pointers, one starting at the beginning (`left`) and one at the end (`right`) of the cleaned string. We compare the characters at these pointers. If they are the same, we move the pointers towards the center and continue comparing. If at any point the characters do not match, we return `false`.
+3. **Return Result:** If the pointers cross each other without finding any mismatches, the string is a palindrome, so we return `true`.
 
 ## Complexity
 - Time complexity:
-<!-- Add your time complexity here, e.g. $$O(n)$$ -->
+The time complexity is $O(n)$, where $n$ is the length of the input string. This is because we iterate through the string once to clean it and once more to check for palindromes.
 
 - Space complexity:
-<!-- Add your space complexity here, e.g. $$O(n)$$ -->
+The space complexity is $O(n)$, where $n$ is the length of the input string. This space is used for the cleaned string which contains only alphanumeric characters.
 
 ## Code
 ```c#
