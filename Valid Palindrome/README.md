@@ -31,6 +31,55 @@ Given a string `s`, return `true` ***if it is a palindrome, or `false` otherwise
 - `1 <= s.length <= 2 * 10^5`
 - `s` consists only of printable ASCII characters.
 
+## Testcase
+#### Case 1
+<sub>Input</sub>
+```
+s = "A man, a plan, a canal: Panama"
+```
+
+<sub>Output</sub>
+```
+true
+```
+
+<sub>Expected</sub>
+```
+true
+```
+
+#### Case 2
+<sub>Input</sub>
+```
+s = "race a car"
+```
+
+<sub>Output</sub>
+```
+false
+```
+
+<sub>Expected</sub>
+```
+false
+```
+
+#### Case 3
+<sub>Input</sub>
+```
+s = " "
+```
+
+<sub>Output</sub>
+```
+true
+```
+
+<sub>Expected</sub>
+```
+true
+```
+
 ## Intuition
 <!-- Describe your first thoughts on how to solve this problem. -->
 
