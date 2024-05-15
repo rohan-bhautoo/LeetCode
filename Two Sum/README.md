@@ -36,15 +36,18 @@ You can return the answer in any order.
 ```
 nums = [2,7,11,15]
 ```
+```
+targt = 9
+```
 
 <sub>Output</sub>
 ```
-
+[0,1]
 ```
 
 <sub>Expected</sub>
 ```
-
+[0,1]
 ```
 
 #### Case 2
@@ -52,15 +55,18 @@ nums = [2,7,11,15]
 ```
 nums = [3,2,4]
 ```
+```
+targt = 6
+```
 
 <sub>Output</sub>
 ```
-
+[1,2]
 ```
 
 <sub>Expected</sub>
 ```
-
+[1,2]
 ```
 
 #### Case 3
@@ -68,34 +74,45 @@ nums = [3,2,4]
 ```
 nums = [3,3]
 ```
+```
+targt = 6
+```
 
 <sub>Output</sub>
 ```
-
+[0,1]
 ```
 
 <sub>Expected</sub>
 ```
-
+[0,1]
 ```
 
-## Intuition
+# Intuition
+The first thought is to find a way to determine if there are two numbers in the array that add up to the given target. A naive approach might involve checking every possible pair of numbers, but this would be inefficient. Instead, we can leverage a hash table (dictionary) to store each number's complement (target - current number) as we iterate through the array, allowing us to check if the complement has already been encountered.
 
+# Approach
+1. Initialize an empty dictionary to store the numbers we have seen so far and their indices.
+2. Iterate through the array:
+    - For each number, calculate its complement (target - current number).
+    - Check if this complement is already in the dictionary.
+        - If it is, return the indices of the complement and the current number.
+        - IF it isn't, add the current number and its index to the dictionary. 
+3. The solution guarantees that there is exactly one solution, so we will always find a result within the loop.
 
-## Approach
-1. 
-
-## Complexity
+# Complexity
 - Time complexity:
+The time complexity is $O(n)$ because we iterate through the array once, performing constant-time dictionary operations (insertions and lookups).
 
 - Space complexity:
+The space complexity is $O(n)$ because, in the worst case, we might store all $n$ elements in the dictionary.
 
-## Code
+# Code
 ```c#
-using System.Text.RegularExpressions;
-
-public class Solution {
-    public int[] TwoSum(int[] nums, int target) {
+public class Solution 
+{
+    public int[] TwoSum(int[] nums, int target) 
+    {
         
     }
 }
