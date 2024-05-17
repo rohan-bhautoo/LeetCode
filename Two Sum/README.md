@@ -88,10 +88,10 @@ targt = 6
 [0,1]
 ```
 
-# Intuition
+## Intuition
 The first thought is to find a way to determine if there are two numbers in the array that add up to the given target. A naive approach might involve checking every possible pair of numbers, but this would be inefficient. Instead, we can leverage a hash table (dictionary) to store each number's complement (target - current number) as we iterate through the array, allowing us to check if the complement has already been encountered.
 
-# Approach
+## Approach
 1. Initialize an empty dictionary to store the numbers we have seen so far and their indices.
 2. Iterate through the array:
     - For each number, calculate its complement (target - current number).
@@ -100,14 +100,14 @@ The first thought is to find a way to determine if there are two numbers in the 
         - IF it isn't, add the current number and its index to the dictionary. 
 3. The solution guarantees that there is exactly one solution, so we will always find a result within the loop.
 
-# Complexity
+## Complexity
 - Time complexity:
 The time complexity is $O(n)$ because we iterate through the array once, performing constant-time dictionary operations (insertions and lookups).
 
 - Space complexity:
 The space complexity is $O(n)$ because, in the worst case, we might store all $n$ elements in the dictionary.
 
-# Code
+## Code
 ```c#
 public class Solution 
 {
