@@ -110,7 +110,7 @@ The time complexity is $O(n)$ where $n$ is the length of the array, as we are it
 The space complexity is $O(1)$ because we are modifying the array in-place and not using any extra space that scales with the input size.
 
 ## Code
-```
+```c#
 public class Solution 
 {
     public int RemoveElement(int[] nums, int val) 
