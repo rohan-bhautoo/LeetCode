@@ -65,12 +65,12 @@ val = 3
 
 <sub>Output</sub>
 ```
-
+[2,2]
 ```
 
 <sub>Expected</sub>
 ```
-
+[2,2]
 ```
 
 #### Case 2
@@ -84,30 +84,48 @@ val = 2
 
 <sub>Output</sub>
 ```
-
+[0,1,3,0,4]
 ```
 
 <sub>Expected</sub>
 ```
-
+[0,1,3,0,4]
 ```
 
-# Intuition
+## Intuition
+My first thought on solving this problem is to iterate through the array and filter out elements that are not equal to the specified value `val`. This can be done in a single pass, maintaining a counter to keep track of the position to place the next non-`val` element. This ensures we modify the array in-place without using extra space for another array.
 
+## Approach
+1. Initialize a counter `k` to 0. This counter will keep track of the number of elements that are not equal to `val` and will also serve as the index to place the next valid element.
+2. Iterate through each element in the array using a for loop.
+3. For each element, check if it is not equal to `val`.
+4. If the element is not equal to `val`, place it at the index k and increment `k`.
+5. After completing the iteration, `k` will contain the count of elements not equal to `val`, and the first `k` elements in the array will be the elements that are not equal to `val`.
 
-# Approach
-1. 
-
-# Complexity
+## Complexity
 - Time complexity:
+The time complexity is $O(n)$ where $n$ is the length of the array, as we are iterating through the array only once.
 
 - Space complexity:
+The space complexity is $O(1)$ because we are modifying the array in-place and not using any extra space that scales with the input size.
 
-# Code
-```c#
-public class Solution {
-    public int RemoveElement(int[] nums, int val) {
+## Code
+```
+public class Solution 
+{
+    public int RemoveElement(int[] nums, int val) 
+    {
+        int k = 0;
         
+        for(int i = 0; i < nums.Length; i++)
+        {
+            if(nums[i] != val)
+            {
+                nums[k++] = nums[i];
+            }
+        }
+
+        return k;
     }
 }
 ```
